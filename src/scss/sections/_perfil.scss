@@ -1,0 +1,22 @@
+//.Perfil{
+//  @apply md:items-start landscape:items-start landscape:text-[70%];
+//  .section__title{
+//    @apply text-text text-left
+//  }
+//}
+.Perfil{
+  @apply md:landscape:items-start;
+  .section-container{
+    @apply h-auto max-h-[100%] w-[100%] xl:landscape:max-w-[60%] text-[.95em] md:text-[1.2em] lg:text-[2em] xl:text-[1em] overflow-y-auto;
+  }
+  .section__title{
+    @apply text-text text-center md:landscape:text-left text-[1.3em] md:text-[1.7em] xl:landscape:text-[1.3em];
+    text-shadow: none;
+  }
+  p{
+    @apply mb-[1em] ;
+  }
+  ul{
+    @apply list-disc pl-[1.3em] lg:text-[1em] xl:text-[1em];
+  }
+}

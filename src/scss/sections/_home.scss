@@ -1,0 +1,9 @@
+.Home{
+  @apply flex justify-center items-center;
+  h1{
+    @apply table text-[1.8em] landscape:text-[2.5em] tracking-[2px] mt-[5vh] font-bold md:text-[7vw] landscape:md:text-[5vw] leading-[1] left-[50%]  ;
+    span{
+      @apply block font-body text-[40%] lg:text-[30%] text-right mt-[.75em] md:mt-0;
+    }
+  }
+}

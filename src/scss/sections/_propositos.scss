@@ -1,0 +1,33 @@
+.Proposito{
+  @apply px-[2em] md:px-[10vw];
+  p{
+    @apply mb-[2rem] text-center mt-[1em] lg:text-[2em] xl:text-[1em];
+  }
+  &__list{
+    @apply list-disc lg:text-[2em] xl:text-[1em];
+  }
+}
+.marco{
+  @apply relative;
+  &::before, &::after{
+    $size: 1.2em;
+    color: #df1616;
+    content: "";
+    display: block;
+    position: absolute;
+    height: $size*1.5;
+    width: $size*1.5;
+    top: 0;
+    left:0;
+    transform: translate(-50%,-25%);
+    border-top: 2px solid;
+    border-left: 2px solid;
+  }
+  &:after{
+    left: unset;
+    right:0;
+    transform: translate(50%,-25%);
+    border-right: 2px solid;
+    border-left: none;
+  }
+}

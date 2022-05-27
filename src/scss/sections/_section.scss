@@ -1,0 +1,57 @@
+.section{
+  @apply overflow-y-hidden overflow-x-hidden relative flex flex-col justify-center items-center w-[100%] h-[95vh] xl:h-[100vh] opacity-0 px-[1em] md:px-[7.5vw] pt-[calc(var(--header-height)+1em)] pb-[calc(var(--header-height)-1em)];
+  animation: show .75s forwards linear;
+  @keyframes show {
+    to{
+      opacity: 1;
+    }
+  }
+  &.compass::before{
+    content: "";
+    @apply absolute bg-[url(/src/img/compass_all.png)] bg-cover w-[15vh] h-[15vh] bottom-0 left-[50%] translate-x-[-50%] translate-y-[40%] z-[-1];
+    //width: 15vh;
+    //height: 15vh;
+    //bottom: 0;
+    //left: 50%;
+    //transform: translateY(40%) translateX(-50%);
+  }
+  &.logoV::after {
+    @apply content-[''] absolute w-[100px] md:w-[260px] landscape:md:w-[200px] xl:landscape:w-[150px] 2xl:landscape:w-[250px] h-[100%]  bg-[url(/src/img/logo_fondo-v.png)] bg-cover bg-center top-0 right-0 landscape:translate-x-[17%] md:translate-x-[8%] md:landscape:translate-x-[20%] opacity-30;
+  }
+}
+.arrowPage{
+  @apply absolute left-[50%] translate-x-[-50%] text-transparent w-[5.25vh] h-[3.5vh] before:content-[''] after:content-[''];
+  z-index: 15000;
+  &::before, &::after{
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    transform-origin: center;
+    transform: rotate(-45deg);
+  }
+  &::after{
+    left: unset;
+    right: 25%;
+    transform: rotate(45deg);
+  }
+  &.next{
+    @apply bottom-[1em] lg:bottom-[3vh] ;
+
+  }
+  &.prev{
+    @apply top-[3vh] rotate-[180deg];
+  }
+}
+.Proposito {
+  background: var(--compass);
+}
+.section__title{
+  @apply text-titles text-[1.5em] md:text-[2.5em] xl:text-[2em] uppercase tracking-[1vw] mb-[0] xl:mb-[.5em] 2xl:mb-[1em];
+  text-shadow: 2px 2px 0 #000;
+  span{
+    @apply block text-[1rem] mt-[.5em] text-text tracking-[1px] ;
+  }
+}

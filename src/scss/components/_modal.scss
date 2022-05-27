@@ -1,0 +1,40 @@
+.modal{
+  @apply absolute top-0 left-0 bg-[rgba(0,0,0,.8)] h-[100vh] w-[100%] flex justify-center items-center opacity-0;
+  animation: show .5s forwards;
+  @keyframes show {
+    to{
+      opacity: 1;
+    }
+  }
+  &__container{
+    @apply relative w-[80%] h-[70%] max-w-[800px] overflow-y-auto p-[1.5em] bg-[rgba(0,0,0,.8)] rounded-lg border border-current;
+  }
+  h2{
+    @apply text-[2em] text-center mb-[1em] text-titles;
+  }
+  &__close{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    top: 0;
+    right: 5px;
+    &::before, &::after{
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      top: 0;
+      left: 50%;
+      background-color: #000;
+      transform-origin: center;
+      transform: rotate(45deg) translateX(-50%) ;
+    }
+    &:after{
+      transform: rotate(-45deg) translateX(-50%);
+    }
+  }
+  .resaltar{
+    @apply font-bold italic;
+  }
+}

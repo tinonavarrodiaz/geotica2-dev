@@ -1,0 +1,205 @@
+.Software{
+  .section-container{
+    @apply h-auto max-h-[100%] w-[100%] overflow-y-auto xl:landscape:text-[.9em];
+  }
+  .Software__title{
+    @apply mb-[.5rem] md:portrait:mb-[1em] text-[2em] xl:text-[2em] uppercase text-center xl:landscape:text-left;
+    span{
+      @apply block font-body text-[50%];
+    }
+  }
+  &__grid{
+    @apply xl:grid grid-cols-3 gap-x-[5%] px-[1em] xl:text-[.9em] xl:leading-[1];
+  }
+  .column{
+    @apply mb-[1.5em]
+  }
+  .column-title{
+    @apply text-center;
+
+  }
+  .marco:after{
+    display: none;
+  }
+  img{
+    @apply block mx-auto mb-[.5em] pt-[.5em];
+  }
+}
+.ptv{
+  @apply w-[40%] landscape:w-[20%] xl:landscape:w-[40%];
+}
+.hdm, .laptop{
+  @apply w-[60%] landscape:w-[30%] md:w-[45%] xl:landscape:w-[40%];
+}
+
+.pix{
+  @apply w-[30%] landscape:w-[15%] ;
+}
+.footer-page{
+  p{
+    @apply text-center font-bold;
+    margin-bottom: 1em;
+  }
+}
+.packages{
+  @apply px-[2em];
+  span{
+    @apply text-span-yellow;
+  }
+
+  &.marco:before{
+    transform: translateX(0) translateY(-25%);
+    border-color: #fdfdfd;
+  }
+}
+.Ingenieria{
+  &__grid{
+    @apply grid  grid-cols-2 mt-[2em] landscape:grid-cols-3 md:grid-cols-3 xl:landscape:grid-cols-5 gap-x-[2em] h-[120px] md:portrait:h-[200px] md:portrait:text-[2em];
+    img{
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+    .imgContainer{
+      @apply h-[100%] relative;
+      &:nth-child(2){
+        @apply hidden xl:landscape:block;
+      }
+      &:nth-child(4){
+        @apply hidden xl:landscape:block;
+      }
+      &:nth-child(5){
+        @apply hidden landscape:block md:block xl:landscape:block;
+      }
+    }
+  }
+  & .text-content{
+    @apply lg:portrait:text-[1.2em];
+  }
+}
+
+.svg {
+  @apply w-[100%] h-[100px] max-w-[100%] lg:max-w-[90%] xl:max-w-[75%] 2xl:max-w-[55%] overflow-hidden self-start scale-[.75] md:scale-[1] lg:scale-[.9] origin-top-left;
+
+
+  svg{
+    @apply w-[1600px] h-[100px] ;
+  }
+}
+.cls-1 {
+  @apply stroke-[15px] fill-[none] stroke-titles;
+}
+.Comunicacion{
+  &__list{
+    @apply mb-[5vh];
+    li{
+      @apply mb-[.5em] text-[1em];
+    }
+  }
+}
+.Contacto {
+  &__grid {
+    @apply landscape:grid grid-cols-2 gap-x-[3vw] mb-[2em] lg:mb-[5vh] w-[100%];
+  }
+
+
+  &__data {
+    @apply flex flex-col justify-start mt-[1em] xl:mt-0 items-center lg:items-start h-[100%] translate-y-[-5%];
+    img {
+      @apply mb-[1em]
+    }
+
+    [href*="mailto"] {
+      @apply my-[.5em] text-text font-bold tracking-[1px];
+      text-decoration: underline;
+    }
+    p{
+      @apply mb-[0] text-[.8em] landscape:text-[1em] md:text-[1em];
+
+    }
+  }
+
+  &__form {
+    //@apply;
+    .input-group {
+      @apply border border-inherit rounded-lg mb-[1em];
+      input, textarea {
+        @apply leading-[2em] xl:leading-[2.5em] w-[100%] bg-transparent px-[.5em] resize-none;
+        &::placeholder {
+          @apply text-text;
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+
+    }
+
+    button {
+      @apply w-[100%] bg-titles rounded-lg leading-[2.5em] uppercase;
+    }
+  }
+  img{
+    @apply lg:ml-0;
+    //margin-left: 0;
+  }
+}
+.Comunicacion__flechas{
+  @apply w-full bg-blue-600;
+  img{
+    @apply w-full;
+  }
+}
+.text-content{
+  @apply h-[40vh] landscape:h-[auto] lg:h-[30vh] md:portrait:h-[40vh] md:landscape:h-[40vh] lg:landscape:h-[auto] xl:landscape:h-[30vh] 2xl:h-auto overflow-y-auto mt-[0] mb-[1em];
+}
+
+.lineas{
+  $size: 70px;
+  @apply w-[98%] lg:w-[100%];
+  height: $size;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  .l-cont{
+    width: 100%;
+    height: 100%;
+    transform: translateX(-$size);
+  }
+  .linea{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $size;
+    height: $size;
+    $bd: 12px;
+    background: transparent;
+    transform-origin: center;
+    transform: rotate(-45deg);
+    color: #DF1A1F;
+    //border-width: 50px;
+    //border-right: solid;
+    //border-top: solid;
+    box-shadow: $bd $bd #DF1A1F;
+    margin-left: $bd;
+    @for $i from 1 through 50{
+      &:nth-child(#{$i}){
+        left: $bd*($i*3);
+      }
+    }
+
+  }
+}
+.Comunicacion__list{
+  @apply text-[.9em] md:text-[1.3em] xl:text-[1em];
+}
+.Presencia .section-container{
+  @apply max-w-[90%]
+}

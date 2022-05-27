@@ -1,0 +1,62 @@
+:root {
+  --header-height: 70px;
+  @media screen and (min-width: 1024px) {
+    --header-height: 90px;
+  }
+}
+
+html,body, #root{
+  @apply h-[100vh] overflow-hidden;
+}
+body{
+  @apply bg-body text-text font-body text-[17px];
+}
+
+h1,h2,h3,h4,h5,h6{
+  @apply font-title;
+}
+
+p{
+  @apply mb-[.5em];
+  &:last-child, &:only-child{
+    @apply mb-0;
+  }
+}
+
+img, a{
+  @apply inline-block;
+}
+
+*::-webkit-scrollbar {
+  width: 16px !important;     /* Tamaño del scroll en vertical */
+  height: 16px;    /* Tamaño del scroll en horizontal */
+  //display: none;  /* Ocultar scroll */
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+*::-webkit-scrollbar-thumb {
+  background: darkred;
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: darkred;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+*::-webkit-scrollbar-thumb:active {
+  background-color: darkred;
+}
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+*::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+*::-webkit-scrollbar-track:hover,
+*::-webkit-scrollbar-track:active {
+  background: #111;
+}

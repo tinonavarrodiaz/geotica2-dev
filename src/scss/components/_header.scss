@@ -1,0 +1,69 @@
+.main-header{
+  @apply absolute top-0 left-0 h-[var(--header-height)] w-full flex justify-between items-center px-[1em] md:px-[3.5vw] absolute z-[100];
+  .contact-link{
+    height: calc(var(--header-height) * .7);
+  }
+}
+.main-nav{
+  @apply flex h-[100%] items-center;
+  img{
+    @apply w-auto h-[100%];
+  }
+}
+$size: 3em;
+.toggle-menu{
+  height: $size;
+  width: $size;
+  margin-right: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+  border-radius: 50%;
+  transform: scale(.8);
+}
+.hamburger {
+  //display: none;
+  @apply p-0 scale-[.65] translate-y-[8%] translate-x-[-1px];
+}
+.hamburger:hover,
+.hamburger.is-active:hover {
+  opacity: 1;
+}
+.hamburger-inner,
+.hamburger-inner::after,
+.hamburger-inner::before {
+  @apply bg-white w-[#{$size*.85}];
+}
+.hamburger.is-active {
+  .hamburger-inner,
+  .hamburger-inner::after,
+  .hamburger-inner::before {
+    @apply bg-white;
+  }
+}
+.main-menu{
+  @apply bg-[#222] uppercase w-[100%] lg:w-[30vw] h-[100vh] absolute top-0 right-0 pt-[calc(var(--header-height)+2em)] pb-[2em] overflow-hidden overflow-y-auto z-[-1] text-center lg:text-right px-[1em] md:text-[1.5em] lg:text-[1em] translate-x-[101%] lg:pr-[2em] transition-transform duration-500;
+  &__item{
+    @apply mb-[1em];
+  }
+  &.is-active{
+    @apply translate-x-0;
+  }
+}
+.submenu{
+  @apply overflow-hidden max-h-0 transition-all duration-500 ;
+  &.is-active{
+    @apply max-h-[14em];
+  }
+  &__item {
+    @apply bg-[rgba(2,0,2,30%)] mb-[.5em] leading-[2em];
+    &:only-child, &:last-child{
+      @apply mb-0;
+    }
+  }
+}
+.logo{
+  @apply w-[30vw] xl:w-[185px]
+}
+
